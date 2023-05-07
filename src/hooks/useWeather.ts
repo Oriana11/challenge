@@ -3,14 +3,14 @@ import axios from "axios";
 import { Location } from "../models/Location";
 import { WeatherForecast } from "../models/WeatherForecast";
 
-
 export default function useWeather(city: string) {
   const [info, setInfo] = React.useState({
     city: "",
     temp: 0,
     icon: "",
     humidity: 0,
-
+    windspeed: 0,
+    feelslike: 0,
   });
 
   const fetchLocation = async (city: string): Promise<Location> => {
@@ -42,13 +42,18 @@ export default function useWeather(city: string) {
     const getWeatherInfo = async () => {
       try {
         const location = await fetchLocation(city);
-        const weatherForecast = await fetchWeatherForecast(location.lat, location.lon);
+        const weatherForecast = await fetchWeatherForecast(
+          location.lat,
+          location.lon
+        );
 
         setInfo({
           city: location.name,
           temp: weatherForecast.main.temp,
           icon: `https://openweathermap.org/img/wn/${weatherForecast.weather?.[0]?.icon}@2x.png`,
           humidity: weatherForecast.main.humidity,
+          windspeed: weatherForecast.wind.speed,
+          feelslike: weatherForecast.main.feels_like,
         });
       } catch (error) {
         console.error(error);
