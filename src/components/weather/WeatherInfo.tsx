@@ -5,8 +5,6 @@ interface WeatherInfoProps {
 }
 
 export default function WeatherInfo(info: WeatherInfoProps) {
-  console.log("-->Weather info is : " + info);
-
   return (
     <>
       <div className="weather-info">

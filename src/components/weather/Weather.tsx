@@ -6,7 +6,6 @@ interface WeatherProps {
 
 export default function Weather({ city }: WeatherProps) {
   const { info } = useWeather(city);
-  console.log("Weather.tsx: info is : " + info);
   return (
     <>
       <div className="weather-info">

@@ -8,8 +8,6 @@ export default function Search() {
 
   const handleInputChange = (event: any) => setInput(event.target.value);
 
-  console.log(input);
-
   return (
     <>
       <input
