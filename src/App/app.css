@@ -108,7 +108,7 @@ img {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  background-image: url("https://images.pexels.com/photos/531767/pexels-photo-531767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("../img/clouds.jpg");
   background-size: cover;
   background-position: center;
 }
